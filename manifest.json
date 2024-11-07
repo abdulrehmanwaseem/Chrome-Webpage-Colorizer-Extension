@@ -1,0 +1,9 @@
+{
+  "manifest_version": 3,
+  "name": "Webpage Colorizer",
+  "version": "1.0.0",
+  "description": "A simple Chrome extension to customize the color of any webpage. With this extension, users can change the background, text, and element colors for better readability, accessibility, or style. Great for dark mode enthusiasts or anyone looking to personalize their browsing experience.",
+  "icons": {
+    "32": "images/colorizer-icon.png"
+  }
+}

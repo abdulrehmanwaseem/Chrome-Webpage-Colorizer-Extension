@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import { Sketch } from "@uiw/react-color";
 
 function App() {
@@ -20,6 +21,37 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    document.body.style.backgroundColor = color;
+  }, [color]);
+
+  const colorOptions = [
+    { hex: "#1d232aFC", name: "Charcoal" },
+    { hex: "#AEC6CFCC", name: "Cool Gray" },
+    { hex: "#FAF7F5CC", name: "Soft White" },
+    { hex: "#345DA7", name: "Aqua" },
+    { hex: "#FFDAC1CC", name: "Peach" },
+    { hex: "#ECEFF4", name: "Aqua" },
+    { hex: "#B2DFDBCC", name: "Mint" },
+    { hex: "#A5D6A7CC", name: "Pastel Green" },
+    { hex: "#D1C4E9CC", name: "Lavender" },
+    { hex: "#F8BBD0CC", name: "Pink" },
+    { hex: "#FFF9C4CC", name: "Lemon" },
+    { hex: "#1A103D", name: "Synthwave" },
+    { hex: "#FFE0B2CC", name: "Cream" },
+    { hex: "#C8E6C9CC", name: "Seafoam" },
+    { hex: "#E1BEE7CC", name: "Orchid" },
+    { hex: "#C5E1A5CC", name: "Light Green" },
+    { hex: "#F0F4C3CC", name: "Pale Yellow" },
+    { hex: "#FFF5E1CC", name: "Ivory" },
+    { hex: "#FFECB3CC", name: "Light Peach" },
+    { hex: "#FAE7F4", name: "Valentine" },
+    { hex: "#E9E7E7", name: "Gray" },
+    { hex: "#212121", name: "Mate Black" },
+    { hex: "#B0D0D3", name: "Mist Blue" },
+    { hex: "#FFC1CC", name: "Blush Pink" },
+  ];
+
   return (
     <div className="flex gap-4 px-4 py-3 flex-col items-center border-transparent">
       <h1 className="text-2xl font-bold">Webpage Colorizer 🩵</h1>
@@ -28,6 +60,10 @@ function App() {
         onChange={(color) => {
           setColor(color.hexa);
         }}
+        presetColors={colorOptions.map((option) => ({
+          color: option.hex,
+          title: option.name,
+        }))}
       />
       <div className="w-full px-6">
         <button
